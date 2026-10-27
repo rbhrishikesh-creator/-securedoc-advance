@@ -1,0 +1,28 @@
+{
+  "name": "SecureDoc Advanced",
+  "short_name": "SecureDoc",
+  "description": "Enterprise-Grade Zero-Plaintext Encrypted Document Vault & Collaboration Platform",
+  "start_url": "/",
+  "id": "com.securedoc.advanced",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#090d16",
+  "theme_color": "#0f172a",
+  "categories": ["business", "productivity", "utilities", "security"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Python Virtual Environments & Scratch
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+server/.env
+client/.env
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Storage Vault & Encrypted Payloads
+storage/
+vault/
+*.enc
+storage/vault/*
+!storage/vault/.gitkeep
+storage/temp/*
+!storage/temp/.gitkeep
+
+# Test & Temp outputs
+test_*.docx
+test_*.pdf
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

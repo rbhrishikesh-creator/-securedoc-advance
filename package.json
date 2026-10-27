@@ -1,0 +1,26 @@
+{
+  "name": "securedoc-advanced-monorepo",
+  "version": "1.0.0",
+  "description": "SecureDoc Advanced: AI-Powered Secure Document Management & Real-Time Collaboration Platform",
+  "scripts": {
+    "start": "node scripts/start-all.js",
+    "dev": "node scripts/start-all.js",
+    "status": "node scripts/status.js",
+    "stop": "node scripts/stop-all.js",
+    "server:dev": "npm --prefix server run dev",
+    "client:dev": "npm --prefix client run dev",
+    "build": "npm --prefix client run build"
+  },
+  "keywords": [
+    "security",
+    "document-management",
+    "encryption",
+    "collaboration",
+    "ai"
+  ],
+  "author": "Hrishikesh",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer-core": "^25.16.0"
+  }
+}

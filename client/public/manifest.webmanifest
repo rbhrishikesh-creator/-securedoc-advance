@@ -1,0 +1,58 @@
+{
+  "name": "SecureDoc Advanced",
+  "short_name": "SecureDoc",
+  "description": "Enterprise-Grade Zero-Plaintext Encrypted Document Vault & Collaboration Platform",
+  "start_url": "/",
+  "id": "com.securedoc.advanced",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#090d16",
+  "theme_color": "#0f172a",
+  "categories": ["business", "productivity", "utilities", "security"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "My Vault Documents",
+      "short_name": "Documents",
+      "description": "View and manage all encrypted documents",
+      "url": "/?tab=dashboard",
+      "icons": [{ "src": "/icon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Shared With Me",
+      "short_name": "Shared",
+      "description": "Access team shared custody files",
+      "url": "/?tab=shared",
+      "icons": [{ "src": "/icon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Security & Profile",
+      "short_name": "Security",
+      "description": "Manage biometric authentication and security tokens",
+      "url": "/?tab=profile",
+      "icons": [{ "src": "/icon.svg", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "/manifest.webmanifest"
+    }
+  ],
+  "prefer_related_applications": false
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SecureDoc Advanced</string>
+    <string name="title_activity_main">SecureDoc Advanced</string>
+    <string name="package_name">com.securedoc.advanced</string>
+    <string name="custom_url_scheme">com.securedoc.advanced</string>
+</resources>

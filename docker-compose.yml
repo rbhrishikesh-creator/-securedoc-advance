@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: securedoc-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: securedoc_admin
+      MONGO_INITDB_ROOT_PASSWORD: securedoc_secret_password
+      MONGO_INITDB_DATABASE: securedoc_advanced
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:7-alpine
+    container_name: securedoc-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: securedoc-backend
+    restart: always
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGODB_URI: mongodb://securedoc_admin:securedoc_secret_password@mongodb:27017/securedoc_advanced?authSource=admin
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: securedoc_super_secure_jwt_secret_key_2026_production
+      ENCRYPTION_MASTER_KEY: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+      CLIENT_URL: http://localhost:5173
+      VAULT_STORAGE_DIR: /app/storage/vault
+      SMTP_HOST: smtp.ethereal.email
+      SMTP_PORT: 587
+      SMTP_USER: ethereal_user
+      SMTP_PASS: ethereal_pass
+    ports:
+      - "5000:5000"
+    volumes:
+      - vault-storage:/app/storage/vault
+    depends_on:
+      - mongodb
+      - redis
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: securedoc-frontend
+    restart: always
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
+  redis-data:
+  vault-storage:
