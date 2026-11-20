@@ -28,8 +28,9 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       return;
     }
 
-    // Connect using relative origin through Vite proxy
-    const s = io(window.location.origin, {
+    // Connect using configured socket origin or relative origin through Vite proxy
+    const socketBase = import.meta.env.VITE_SOCKET_URL || import.meta.env.VITE_API_URL || window.location.origin;
+    const s = io(socketBase, {
       path: '/socket.io',
       auth: { token },
       autoConnect: true,

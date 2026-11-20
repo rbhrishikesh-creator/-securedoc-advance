@@ -1,4 +1,4 @@
-import { request } from './client';
+import { request, API_BASE } from './client';
 import { PublicShareInfo } from '../types';
 
 export const publicApi = {
@@ -23,7 +23,7 @@ export const publicApi = {
     }),
 
   downloadPublicFile: async (token: string, password?: string, filename: string = 'document') => {
-    const res = await fetch(`/api/public/share/${token}/access`, {
+    const res = await fetch(`${API_BASE}/public/share/${token}/access`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password, download: true }),
