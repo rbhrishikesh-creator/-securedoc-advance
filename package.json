@@ -9,7 +9,7 @@
     "stop": "node scripts/stop-all.js",
     "server:dev": "npm --prefix server run dev",
     "client:dev": "npm --prefix client run dev",
-    "build": "npm --prefix client run build"
+    "build": "cd client && npm install && npm run build"
   },
   "keywords": [
     "security",
